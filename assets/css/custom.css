@@ -80,3 +80,17 @@ a:hover, a:focus { color: var(--ps-blue-light); }
   border-bottom: 2px solid #0a5cff; /* subtle PS-blue underline */
   padding-bottom: 2px;
 }
+
+/* Experience card: keep the role below the title (no overlap) */
+#experience .card .role {
+  position: static !important;   /* override template's absolute/float */
+  float: none !important;
+  margin: .25rem 0 0;
+  text-align: left;
+}
+
+/* Let very long headings wrap instead of bumping into the role */
+#experience .card .card-title a {
+  white-space: normal;
+  word-break: break-word;
+}
