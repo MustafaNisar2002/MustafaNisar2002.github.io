@@ -1,8 +1,8 @@
-/* Activity 3 — Theme override to PlayStation Blue */
+/* Activity 3 — Theme override to  Blue */
 
 /* --- Palette --- */
 :root{
-  --ps-blue: #003791;      /* PlayStation blue (primary) */
+  --ps-blue: #003791;      /*  blue (primary) */
   --ps-blue-dark: #00246b; /* darker header/footer */
   --ps-blue-light: #0a5cff;/* hover/links */
   --on-blue: #ffffff;      /* text on blue */
@@ -52,9 +52,7 @@ a:hover, a:focus { color: var(--ps-blue-light); }
 
 /* === Hero background override (replaces the green) === */
 #intro {
-  /* pick ONE of these; start with the gradient */
   background: radial-gradient(circle at 25% 20%, #0a5cff 0%, #003791 55%, #00246b 100%) !important;
-  /* or, solid option: background-color: #003791 !important; */
 }
 
 /* remove/neutralize the green overlay the template uses */
