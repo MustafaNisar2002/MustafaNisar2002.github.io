@@ -61,3 +61,22 @@ a:hover, a:focus { color: var(--ps-blue-light); }
 #intro .overlay {
   background: transparent !important;
 }
+
+/* Improve contrast for the hero subtitle + typed text */
+#intro .caption h5 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+/* The typed word itself */
+.typing {
+  color: #ffffff !important;   /* was blue; switch to white */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+.typing {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  border-bottom: 2px solid #0a5cff; /* subtle PS-blue underline */
+  padding-bottom: 2px;
+}
