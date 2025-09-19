@@ -229,52 +229,15 @@
     </section>
 
     <!-- PROJECTS -->
+        <!-- PROJECTS (dynamic) -->
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projects</h3>
       <div class="container">
-        <div class="row">
-          <!-- Seat Belt Detection -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <!-- TODO: add project image -->
-                <img alt="Seat Belt Detection" src="/assets/img/proj-seatbelt.jpg" class="activator" style="height:100%; width:100%" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Seat Belt Detection<i class="mdi-navigation-more-vert right"></i></span>
-                <p>Deep learning project using YOLOv5; built a 3.5k‑image dataset and achieved 97% accuracy on unseen data.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Flexible Radio Transceiver -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <!-- TODO: add project image -->
-                <img alt="Flexible Radio Transceiver" src="/assets/img/proj-radio.jpg" class="activator" style="height:100%; width:100%" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Flexible Radio Transceiver<i class="mdi-navigation-more-vert right"></i></span>
-                <p>Designed RX filter, limiter, and quadrature mixer using Altium, NI Multisim, and PyVISA; hands‑on PCB and comms.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Enhanced HDL Processor -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <!-- TODO: add project image -->
-                <img alt="Enhanced HDL Processor" src="/assets/img/proj-processor.jpg" class="activator" style="height:100%; width:100%" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Enhanced HDL Processor<i class="mdi-navigation-more-vert right"></i></span>
-                <p>8‑register 16‑bit processor in Verilog with memory and I/O; validated using ModelSim & Intel Quartus.</p>
-              </div>
-            </div>
-          </div>
+        <div class="row" id="projects-list"></div>
+        <div class="center" style="margin-top: 12px;">
+          <a id="load-more" class="btn btn-large waves-effect">Load More</a>
         </div>
+        <p class="grey-text" style="margin-top:8px; font-size:.9rem;">Shows the newest project first. Use <b>Load More</b> to reveal older ones.</p>
       </div>
     </section>
 
@@ -325,7 +288,7 @@
         <div class="map-wrapper" style="position:relative; padding-bottom:56%; height:0; overflow:hidden; border-radius:16px; box-shadow:0 12px 30px rgba(0,0,0,0.15);">
           <!-- Replace the src below with your Google My Maps embed URL -->
           <iframe
-            src="https://www.google.com/maps/d/u/0/embed?mid=1RnYVm7dEAJ0OO59oqjK5G_iRg7Am3zA&ehbc=2E312F"
+            src="https://www.google.com/maps/d/embed?mid=1cEo9EXAMPLE-REPLACE-WITH-YOURS"
             style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
           </iframe>
@@ -383,5 +346,6 @@
       $(".button-collapse").sideNav({ menuWidth: 190, edge: "left", closeOnClick: true });
     });
   </script>
+  <script src="/assets/js/projects.js"></script>
 </body>
 </html>
