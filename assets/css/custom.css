@@ -48,3 +48,16 @@ a:hover, a:focus { color: var(--ps-blue-light); }
 /* Optional: selection + focus */
 ::selection { background: var(--ps-blue-light); color: #fff; }
 :focus { outline-color: var(--ps-blue-light); }
+
+
+/* === Hero background override (replaces the green) === */
+#intro {
+  /* pick ONE of these; start with the gradient */
+  background: radial-gradient(circle at 25% 20%, #0a5cff 0%, #003791 55%, #00246b 100%) !important;
+  /* or, solid option: background-color: #003791 !important; */
+}
+
+/* remove/neutralize the green overlay the template uses */
+#intro .overlay {
+  background: transparent !important;
+}
