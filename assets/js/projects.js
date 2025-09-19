@@ -1,12 +1,4 @@
-/* Activity 5 — Dynamic Projects List
- * ----------------------------------
- * Edit the `projects` array below with YOUR projects. Each item supports:
- * - title (string)
- * - date (YYYY-MM-DD) — used for sorting newest→oldest
- * - desc (short description)
- * - link (optional URL)
- * - image (optional path to an image in your repo, e.g., /assets/img/proj-*.jpg)
- */
+/* Activity 5 — Dynamic Projects List (loop-based)*/
 
 (function () {
   const projects = [
@@ -21,28 +13,28 @@
       title: "Flexible Radio Transceiver",
       date: "2023-10-01",
       desc: "Designed RX filter, limiter, and quadrature mixer; used Altium, NI Multisim, and PyVISA for validation.",
+      link: "#", 
       image: "/assets/img/proj-radio.jpg"
     },
     {
       title: "Enhanced HDL Processor (Verilog)",
       date: "2023-04-20",
       desc: "16‑bit processor with 8 registers, memory and I/O; validated in ModelSim & Intel Quartus.",
-
+      link: "#",
       image: "/assets/img/proj-processor.jpg"
     }
   ];
 
-  // sort newest → oldest by date
+  // Sort newest → oldest by date
   projects.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const listEl = document.getElementById("projects-list");
   const loadMoreBtn = document.getElementById("load-more");
 
-  // show only 1 project initially (as required by the assignment)
-  const PAGE_SIZE = 1;
+  const PAGE_SIZE = 1; // requirement: initially display ONLY the latest project
   let shown = 0;
 
-  function projectCard(p) {
+  function projectCardHTML(p) {
     const dateStr = new Date(p.date).toLocaleDateString(undefined, {
       year: "numeric", month: "short", day: "2-digit"
     });
@@ -71,21 +63,25 @@
       </div>`;
   }
 
-  function renderMore() {
-    const slice = projects.slice(shown, shown + PAGE_SIZE);
-    slice.forEach((p) => {
+  // LOOP through the array to render N additional projects each call
+  function renderProjects(limit) {
+    for (let i = 0; i < limit && shown < projects.length; i++) {
+      const p = projects[shown];
       const wrapper = document.createElement("div");
-      wrapper.innerHTML = projectCard(p);
-      // append the first (outer) child from the template wrapper
+      wrapper.innerHTML = projectCardHTML(p);
       listEl.appendChild(wrapper.firstElementChild);
-    });
-    shown += slice.length;
+      shown++;
+    }
     if (shown >= projects.length) {
       loadMoreBtn.style.display = "none";
     }
   }
 
-  loadMoreBtn.addEventListener("click", renderMore);
-  // initial render shows only the latest project
-  renderMore();
+  // Initial render (ONE project only)
+  renderProjects(PAGE_SIZE);
+
+  // Load More → render one more each click
+  loadMoreBtn.addEventListener("click", function () {
+    renderProjects(PAGE_SIZE);
+  });
 })();
