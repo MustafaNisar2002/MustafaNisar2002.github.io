@@ -1,0 +1,50 @@
+/* Activity 3 — Theme override to PlayStation Blue */
+
+/* --- Palette --- */
+:root{
+  --ps-blue: #003791;      /* PlayStation blue (primary) */
+  --ps-blue-dark: #00246b; /* darker header/footer */
+  --ps-blue-light: #0a5cff;/* hover/links */
+  --on-blue: #ffffff;      /* text on blue */
+}
+
+/* Replace Materialize teal helpers used throughout the template */
+.teal, .page-title.teal,
+.btn.teal, .btn-large.teal, .btn-floating.teal,
+.card .teal, .waves-effect.teal {
+  background-color: var(--ps-blue) !important;
+  color: var(--on-blue) !important;
+}
+
+.teal-text, a.teal-text, .hoverline.teal-text {
+  color: var(--ps-blue) !important;
+}
+
+/* If any teal “darken-*” classes slip in, keep them in-family */
+.teal.darken-4, .teal.darken-3, .teal.darken-2, .teal.darken-1 {
+  background-color: var(--ps-blue-dark) !important;
+}
+
+/* Link + hover states */
+a, a:visited { color: var(--ps-blue); }
+a:hover, a:focus { color: var(--ps-blue-light); }
+
+/* Buttons that aren’t using the teal helper */
+.readme, .contactme, .btn, .btn-large {
+  background-color: var(--ps-blue) !important;
+  border-color: var(--ps-blue) !important;
+  color: var(--on-blue) !important;
+}
+.btn:hover, .btn-large:hover, .readme:hover, .contactme:hover {
+  background-color: var(--ps-blue-dark) !important;
+}
+
+/* Hero typing accent (we removed the inline #004d40) */
+.typing { color: var(--ps-blue-light); }
+
+/* Section title bars that were teal */
+.page-title.teal { background: var(--ps-blue) !important; }
+
+/* Optional: selection + focus */
+::selection { background: var(--ps-blue-light); color: #fff; }
+:focus { outline-color: var(--ps-blue-light); }
